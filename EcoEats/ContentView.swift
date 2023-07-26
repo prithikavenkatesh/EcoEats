@@ -6,83 +6,77 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at  \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+        NavigationStack {
+            ZStack {
+                Color(red: 246/255, green: 240/255, blue: 214/255)
+                    .ignoresSafeArea()
+                VStack {
+                    NavigationLink(destination: CalendarView()) {
+                        ZStack {
+                            Capsule()
+                                .fill( Color(red: 172/255, green: 214/255, blue: 87/255))
+                                .frame(width: 437.5, height: 187.5)
+                            
+                            Text("Calendar")
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                                .font(.largeTitle)
+                                .offset(x:80)
+                            
+                        }
+                    }
+                    .offset(x:-180, y:30)
+                    
+                    
+                    NavigationLink(destination: ResourcesView()) {
+                        ZStack {
+                            Capsule()
+                                .fill(Color(red: 149/255, green: 214/255, blue: 255/255))
+                                .frame(width: 437.5, height: 187.5)
+                            
+                            Text("Resources")
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                                .font(.largeTitle)
+                                .offset(x:-95, y:0)
+                        }
+                    }
+                    .offset(x:190, y:20)
+                    
+                    NavigationLink(destination: RecipesView()) {
+                        ZStack {
+                            Capsule()
+                                .fill(Color(red: 230/255, green: 146/255, blue: 123/255))
+                                .frame(width: 437.5, height: 187.5)
+                            
+                            Text("Recipes")
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                                .font(.largeTitle)
+                                .offset(x: 75 , y: 0)
+                        }
+                    }
+                    .offset(x:-190, y:0)
+                    
+                   
+                    NavigationLink(destination: ContentView()) {
+
+                        Image("homePage")
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 90, height: 90)
                     }
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
         }
-    }
-}
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
