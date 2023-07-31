@@ -17,6 +17,9 @@
 		D24A59CE2A71711D0051C97A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A59CD2A71711D0051C97A /* CalendarView.swift */; };
 		D24A59D02A71713C0051C97A /* ResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A59CF2A71713C0051C97A /* ResourcesView.swift */; };
 		D24A59D22A71715C0051C97A /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A59D12A71715C0051C97A /* RecipesView.swift */; };
+		D2EA01572A77F466003ECD63 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EA01562A77F466003ECD63 /* QRCodeView.swift */; };
+		D2EA01592A77F4A5003ECD63 /* LearnMoreAboutFoodWasteView .swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EA01582A77F4A5003ECD63 /* LearnMoreAboutFoodWasteView .swift */; };
+		D2EA015B2A77F4E6003ECD63 /* OrganizationsForResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EA015A2A77F4E6003ECD63 /* OrganizationsForResourcesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		D24A59CD2A71711D0051C97A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		D24A59CF2A71713C0051C97A /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
 		D24A59D12A71715C0051C97A /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
+		D2EA01562A77F466003ECD63 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		D2EA01582A77F4A5003ECD63 /* LearnMoreAboutFoodWasteView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearnMoreAboutFoodWasteView .swift"; sourceTree = "<group>"; };
+		D2EA015A2A77F4E6003ECD63 /* OrganizationsForResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsForResourcesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,9 @@
 				72F25ADE2A715EB600EDCC05 /* ContentView.swift */,
 				D24A59D12A71715C0051C97A /* RecipesView.swift */,
 				D24A59CF2A71713C0051C97A /* ResourcesView.swift */,
+				D2EA01582A77F4A5003ECD63 /* LearnMoreAboutFoodWasteView .swift */,
+				D2EA015A2A77F4E6003ECD63 /* OrganizationsForResourcesView.swift */,
+				D2EA01562A77F466003ECD63 /* QRCodeView.swift */,
 				D24A59CD2A71711D0051C97A /* CalendarView.swift */,
 				72F25AE02A715EB800EDCC05 /* Assets.xcassets */,
 				72F25AEF2A716AF800EDCC05 /* Launch Screen.storyboard */,
@@ -160,7 +169,10 @@
 				D24A59CE2A71711D0051C97A /* CalendarView.swift in Sources */,
 				72F25AE92A715EB800EDCC05 /* EcoEats.xcdatamodeld in Sources */,
 				72F25AE62A715EB800EDCC05 /* Persistence.swift in Sources */,
+				D2EA01592A77F4A5003ECD63 /* LearnMoreAboutFoodWasteView .swift in Sources */,
+				D2EA01572A77F466003ECD63 /* QRCodeView.swift in Sources */,
 				72F25ADF2A715EB600EDCC05 /* ContentView.swift in Sources */,
+				D2EA015B2A77F4E6003ECD63 /* OrganizationsForResourcesView.swift in Sources */,
 				72F25ADD2A715EB600EDCC05 /* EcoEatsApp.swift in Sources */,
 				D24A59D22A71715C0051C97A /* RecipesView.swift in Sources */,
 			);
